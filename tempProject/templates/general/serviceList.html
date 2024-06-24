@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static\style\solar_services.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="navbar">
+        <nav>
+            <ul class="nav-ul">
+                <img id="logo" src="static/images/home_service_icon1.svg">
+                <li id="name">homcare.</li>
+                <li class="nav-li">
+                    <p><a href="#" id="bookingsLink">Bookings</a></p>
+                    <form id="bookingForm" action="{% url 'serviceList' %}" method="get" style="display: none;">
+                        {% csrf_token %}
+                        <input type="hidden" name="book" value="booked">
+                    </form>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-li"><p><a href="{% url 'logout' %}">logout</a></p></li>
+                <!-- <li class="nav-li"><p><a href="">Bookings</a></p></li> -->
+                {% endif %}
+             
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- <h1>Solar Paneling</h1> -->
+        <div class="box">
+            {% for section in sections %}
+            <div class="services">
+                
+                    <div class="service s{{ forloop.counter }}">
+                        <div class="right-section">
+                            {% for image_obj in image_objs %}
+                                {% if image_obj.ID == section.ID %}
+                                    <img src="{{ image_obj.field_name.url }}" alt="User Image" class="image">
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p class="serv-name">{{ section.title }}</p>
+                        <p style="padding-left: 0px; margin: 10px 0 0 0;padding-bottom: 10px;">
+                            Rate :{{ section.rate }}
+                        </p>
+                        <form method="GET" action="{% url 'service_details' section.ID.clientID|stringformat:'s' %}">
+                            <button type="submit" class="button">Details</button>
+                        </form>
+                    </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+<script>
+    document.getElementById('bookingsLink').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default behavior of the hyperlink
+          document.getElementById('bookingForm').submit(); // Submit the form
+      });
+  </script>
+</html>

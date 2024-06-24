@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="static/style/individualService.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="section">
+  
+            <form class="form LoginForm" action="{% url 'add_section' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="head-container">
+                    <div class="head">
+                        <h2 id="head1" style="font-weight: bolder;">Sections</h2>
+                    </div>
+                    <div class="subhead">
+                        <p id="head2">Start creating your Client sections.</p>
+                        <p style="color: #5a5d63; font-size: smaller;">(*all the fields are required)</p>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Section type" id="type" name="type" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="title" id="title" name="title" required>
+                </div>
+                <div class="input-container">
+                    <input type="number" placeholder="Rate per Employee" id="rate" name="rate" step="0.01" required>
+                </div>
+                 
+
+                 <!-- <div class="custom-file-upload">
+                    <input type="file" id="images" name="images" onchange="handleFiles(this.files)" multiple>
+                    <button>
+                        <label for="images">Choose file</label>
+                    </button>
+                    <span id="fileName">no files chosen</span>
+                </div>  -->
+                <div class="input-container">
+                    <input type="number" placeholder="Employee Count" id="employeeCount" name="employeeCount" required >
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Description" id="description" name="description" rows="4" required>
+                </div>
+                <div class="input-container">
+                    <input type="number" placeholder="Employees per Area" id="employeePerArea" name="employeePerArea" required>
+                </div>
+                <div class="input-container">
+                    <input type="number" placeholder="Time to complete Area" id="timeToComplete" name="timeToComplete" required>
+                </div>
+                <br>
+                <div class="container">
+                    <button type="submit" class="submit" style="margin-right: 0px;" value="Create Section">Submit</button> 
+                    
+                    <input type="file" id="images" name="images" multiple>
+                </div>
+            </form>
+    </div>
+       
+   
+</body>
+</html>

@@ -1,0 +1,125 @@
+body{
+    font-family: "Poppins",sans-serif;
+    margin: 0px;
+    background-color: #e0e0e0;
+    align-items: left;
+}
+main{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    padding: 100px;
+    background-color: rgba(0, 255, 255, 0);
+}
+h1{
+    margin-bottom: 30px;
+    font-size: 70px;
+    /* align-self: center; */
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Align items horizontally */
+    justify-content: left; /* Align items vertically */
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #b7b7b7;
+    transition-duration: 0.2s;
+    opacity: 1;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.innerBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Align items horizontally */
+    justify-content: left; /* Align items vertically */
+    box-sizing: border-box;
+    height: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    transition-duration: 0.2s;
+    opacity: 1;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.innerBlock:hover{
+    transform: scale(1.015);
+    background-color: #f0f0f0;
+}
+.i1{
+    grid-column: 1/5;
+    grid-row: 1/9;
+}
+a,a:link,a:visited,a:active{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+    top: 0;
+    transition: top 0.5s;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+.nav-li{
+    float: right;
+    padding: 0px;
+}
+#name{
+    float: left;
+    margin: 13px 0 0 10px;
+    font-weight: 600;
+    font-size: x-large;
+}
+.nav-li a{
+    display: block;
+    line-height: 0px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) 15px 22px / 0em 0.1em no-repeat;
+  transition: 0.5s;
+    /* background: linear-gradient(black, black);
+    background-position:0% 100% ;
+    background-size: 0em 0.1em;
+    background-repeat: no-repeat;
+  transition:
+        background-size 0.3s,
+        background-position 0s 0.3s; */
+}
+.nav-li a:hover{
+    background-size: 100% .1em;
+    /* background-position: 0% 100%;
+    background-size: 100% 0.1em; */
+}
+
+.right-section {
+     /* Take up remaining space */
+    text-align: center; /* Align content to the center */
+}

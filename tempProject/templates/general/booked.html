@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'style/booked.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<title>List of Services</title>
+</head>
+<body>
+    <header id="navbar">
+        <nav>
+            <ul class="nav-ul">
+                <img id="logo" src="{% static 'images/home_service_icon1.svg' %}">
+                <li id="name">homcare.</li>
+                <li class="nav-li">
+                    <p><a href="{% url 'login' %}" id="bookingsLink">Go Back</a></p>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-li"><p><a href="{% url 'logout' %}">logout</a></p></li>
+                <!-- <li class="nav-li"><p><a href="">Bookings</a></p></li> -->
+                {% endif %}
+             
+            </ul>
+        </nav>
+    </header>    
+<main>
+    <h1>Booked Services</h1>
+    <div class="block">
+        {% for track in tracks %}
+        <div class="innerBlock i1">
+            <div class="track">
+                <p>Company Name: {{ track.companyName }}</p>
+                <p>Email: {{ track.email }}</p>
+                <p>Phone No: {{ track.phoneNo }}</p>
+                <p>Service Address: {{ track.officeAddress }}</p>
+                <p>Start Date: {{ track.startDate }}</p>
+                <p>End Date: {{ track.endDate }}</p>
+                <p>Service Type: {{ track.type }}</p>
+                <p>Status:{{ track.status }}</p>
+            </div>
+        </div>    
+        {% endfor %}
+    </div>
+</main>
+</body>
+</html>

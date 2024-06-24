@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style/otp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <form action="{% url 'otp' %}" method="post">
+                {% csrf_token %}
+                <div id="box-head"><h1 style="margin: 0px;">Verification</h1></div>
+                    <div class="box-container">
+                        <label class="inp-label">Enter your OTP:</label>
+                        <div id="box-body">
+                            <input id="input-container" type="text" name="otp">
+                        </div>
+                    </div>
+                    <input type="hidden" name="panNo" value='{{ panNo }}'>
+                    <input type="hidden" name="mobile" value='{{ mobile }}'>
+                    <input type="hidden" name="pan_date" value='{{ pan_date }}'>
+                    <input type="hidden" name="panName" value='{{ panName }}'>
+                    <input type="hidden" name="reqId" value='{{ ID }}'>
+                    <input type="hidden" name="username" value='{{ username }}'>
+                    <input type="hidden" name="user_email" value='{{ email }}'>
+                    <input type="hidden" name="user_pswd" value='{{ password }}'>
+                    <input type="hidden" name="compName" value='{{ company_name }}'>
+                    <input type="hidden" name="officeAddr" value='{{ office_address }}'>
+                    <input type="hidden" name="owner_name" value='{{ owner_name }}'>
+                    <input type="hidden" name="gstNo" value='{{ gstNo }}'>
+                    <input type="hidden" name="type" value='{{ type }}'>
+                    <button type="submit" id="Validate">Validate</button>
+                </div>
+            </form>
+    </main>
+</body>
+</html>

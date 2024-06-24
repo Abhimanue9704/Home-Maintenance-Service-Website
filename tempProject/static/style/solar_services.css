@@ -1,0 +1,196 @@
+body{
+    font-family: "Poppins",sans-serif;
+    margin: 0px;
+    background-color: #e0e0e0;
+}
+main{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px;
+    background-color: rgba(0, 255, 255, 0);
+}
+h1{
+    margin-bottom: 30px;
+    font-size: 70px;
+    /* align-self: center; */
+}
+.box{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    height: 900px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+}
+/* .services{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(16,1fr);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    /* background-color: #e5e5e5; 
+    border-radius: 15px;
+}*/
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Adjust the minmax value as needed */
+    grid-gap: 20px; /* Adjust the gap between the sections */
+    justify-content: center; /* Center the sections horizontally */
+    align-content: flex-start; /* Align the sections to the top of the container */
+    padding: 10px; /* Add padding as needed */
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items horizontally */
+    justify-content: center; /* Align items vertically */
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    transition-duration: 0.2s;
+    opacity: 1;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.service:hover{
+    transform: scale(1.015);
+    background-color: #f0f0f0;
+}
+.s1{
+    grid-column: 1/5;
+    grid-row: 1/9;
+}
+.s2{
+    grid-column: 1/5;
+    grid-row: 1/9;
+}
+.s3{
+    grid-column: 1/5;
+    grid-row: 1/9;
+}
+.s4{
+    grid-column: 1/5;
+    grid-row: 1/9;
+}
+
+a,a:link,a:visited,a:active{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+.serv-img1{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.205);
+    background-image: url("project resources/sunmicrosystemslogo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.serv-img{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.205);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.serv-name{
+    font-size: 28px;
+    font-weight: 600;
+    margin: 15px 0 0 0;
+    align-self: center;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+    top: 0;
+    transition: top 0.5s;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#logo{
+    height: 40px;
+    width: 40px;
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+.nav-li{
+    float: right;
+    padding: 0px;
+}
+#name{
+    float: left;
+    margin: 13px 0 0 10px;
+    font-weight: 600;
+    font-size: x-large;
+}
+.nav-li a{
+    display: block;
+    line-height: 0px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) 15px 22px / 0em 0.1em no-repeat;
+	transition: 0.5s;
+    /* background: linear-gradient(black, black);
+    background-position:0% 100% ;
+    background-size: 0em 0.1em;
+    background-repeat: no-repeat;
+	transition:
+        background-size 0.3s,
+        background-position 0s 0.3s; */
+}
+.nav-li a:hover{
+    background-size: 100% .1em;
+    /* background-position: 0% 100%;
+    background-size: 100% 0.1em; */
+}
+
+.right-section {
+     /* Take up remaining space */
+    text-align: center; /* Align content to the center */
+}
+.image {
+    max-width: 100%;
+    height: 200px;
+    width: 200%;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #cececf;
+  }

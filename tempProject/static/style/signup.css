@@ -1,0 +1,236 @@
+body{
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.container1{
+    display:flex;
+    gap: 0px;
+    overflow:hidden;
+    background-image: url("../images/luxury-house-real-estate-sale-property-generative-ai.jpg");
+    background-size: cover;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.103);
+    margin: 0;
+    padding: 0;
+    /*background: linear-gradient(
+        45deg,
+        orange 25%,
+        orangered 25%,
+        orange 75%,
+        orangered 75%,
+        orange
+      ),
+      linear-gradient(
+        45deg,
+        orange 25%,
+        orangered 25%,
+        orange 75%,
+        orangered 75%,
+        orange
+      );
+    background-size: 5em 10em;
+    background-position: 0 0, 10px 10px;*/
+}
+  
+.first{
+    width: 50%;
+    height: 100vh;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+#homeservice{
+    margin: 15px;
+    height: 25px;
+    width: 35px;
+    opacity: 0.58;
+}
+.heding{
+    position: absolute;
+    margin-left: 20px;
+    height: 34%;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    line-height: 84px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+.para1{
+    position: absolute;
+    margin-left: 20px ;
+    margin-bottom: 100px;
+    color: white;
+    bottom: 0;
+}
+.second{
+    width: 50%;
+    height: 100vh;
+    float: right;
+    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+}
+#text{
+    margin: 200px 0px 0px 100px;
+    font-size:35px;
+    font-weight: bold;
+}
+.para{
+    display: block;
+    margin: 0px 20px 0px 100px;
+    max-width: 500px;
+}
+.para2{
+    display: block;
+    margin: 0px 0px 0px 100px;
+    max-width: 500px;
+    overflow: hidden;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+#next{
+    float: right;
+    display: block;
+    margin: 50px 105px auto;
+    padding: 5px 17px 5px 17px;
+    background-color: rgba(255, 255, 255, 0.147);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.4s;
+}
+#arrow{
+    margin-top: 0.8px;
+    height: 20px;
+    width: 20px;
+}
+#next:hover{
+    transition: 0.3s;
+    background-color:rgba(255, 255, 255, 0.37);
+}
+#next:active{
+    transition: 0.3s;
+    transform:scale(0.95);
+}
+.subcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 5px;
+    margin: 25px auto;
+    box-sizing: border-box;
+}
+.inputcontainer{
+    position: relative;
+    margin: 5px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+.inputcontainer .radio{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    margin: auto;
+    cursor: pointer;
+    opacity: 0;
+}
+.radiocontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    position: relative;
+    height: 50px;
+    width: 450px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.inputcontainer:hover{
+    transition: 0.3s;
+    transform: scale(1.015);
+    background-color: rgba(255, 255, 255, 0.284);
+}
+
+#user:checked ~ .rc1,
+#client:checked ~ .rc2{
+    /*outline: 2px solid #000000;*/
+    background-color: rgba(255, 255, 255, 0.493);
+    transition: 0.1s  linear;
+}
+.user{
+    width: 450px;
+    height: 60px;
+    border: 3px  solid;
+    border-color: rgb(0, 115, 255);
+    border-radius: 15px;   
+}
+label{
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 12px;
+    padding-left: 15px;
+    font-size: larger;
+}
+.overlay{
+    position: absolute;
+    text-align: end;
+    left: 0;
+    float: right;
+    margin-left: 115px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+#overlaytxt{
+    padding: 5px;
+    font-size: small;
+    font-weight:1px;
+    color: rgba(0, 0, 0, 0.4);
+}
+#overlaytxt1{
+    padding: 5px;
+    margin-left: 15px;
+    font-size: small;
+    font-weight:1px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.overlay1{
+    position: absolute;
+    text-align: end;
+    left: 0;
+    float: right;
+    margin-left: 130px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.inputcontainer:hover .overlay,.overlay1{
+    transition: 0.3s;
+    opacity: 1;
+}
+#svg{
+    padding-top:7px;
+    padding-left: 20px;
+    height: 35px;
+    width: 35px;
+    fill: rgb(0, 115, 255) !important;
+}
+.client{
+    margin: 10px auto;
+    width: 450px;
+    height: 60px;
+    border: 3px  solid;
+    border-color: rgb(0, 115, 255);
+    border-radius: 15px;
+}
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="static/style/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container1">
+        <div class="first">
+            <div class="container">
+                <div>
+                    <img id="homeservice" src="static/images/home_service_icon2.svg">
+                </div>
+                <span class="heding">
+                    <h1 class="heads">Get <br>Started.</h1>
+                </span>
+                <!--<div class="para1">
+                    <p>we make your findings easier!!</p>
+                </div>-->
+            </div>
+        </div>
+        <div class="second">
+            <div id="text">Sign-Up As</div>
+            <div class="subcontainer">
+                <div class="inputcontainer">
+                    <input type="radio" id="user" value="signupUser.html" class="radio" name="rb">
+                    <div class="radiocontainer rc1">
+                        <img id="svg" src="static/images/profile-user-avatar-man-person-svgrepo-com.svg">
+                        <label for="rb">Home Owner</label>
+                        <div class="overlay">
+                            <p id="overlaytxt">to use and book services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inputcontainer">
+                    <input type="radio" id="client" value="signupClient.html" class="radio" name="rb">
+                    <div class="radiocontainer rc2">
+                        <img id="svg" src="static/images/contractorsvg3.png">
+                        <label for="rb">Service Provider</label>
+                        <div class="overlay">
+                            <p id="overlaytxt1">to perform business and provide services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="para">
+                select the preffered profile, to provide you with selected experiance.
+            </div>
+            <!--<div class="client">
+                <img id="clientsvg" src="project resources/contractorsvg3.svg">
+            </div>-->
+            <button id="next" type="button" onclick="redirectToSignUp()">
+                <img id="arrow" src="static/images/arrow2.svg">
+            </button>
+            
+            <div class="para2">
+                <p id="innertxt"></p>
+            </div>
+        </div>
+    </div>
+    <script >
+        
+    function redirectToSignUp() {
+        var userChecked = document.getElementById("user").checked;
+        var serviceProviderSignUpURL = "{% url 'serviceProvider_signUp' %}";
+        var clientSignUpPageURL = "{% url 'client_signUpPage' %}";
+
+        if (userChecked) {
+            window.location.href = serviceProviderSignUpURL;
+        } 
+        else {
+            window.location.href = clientSignUpPageURL;
+        }
+    }
+
+
+    </script>
+</body>
+</html>

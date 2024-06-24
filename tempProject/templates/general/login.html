@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/style/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body >
+   
+        <form class="LoginForm form" action="{% url 'authenticate' %}"  method="POST">
+            {% csrf_token %}
+            <div class="head">
+                <h2 id="head1" style="font-weight: bolder;">Welcome back,</h2>
+            </div>
+            <div class="subhead">
+                <p id="head2">Sign in to your account</p>
+            </div>
+            <div class="mega">
+                <div class="input-container">
+                    <input type="text" placeholder="username" name="user_email">
+                </div>
+                <div class="input-container">
+                <input type="password" placeholder="password" name="user_password">
+                </div>
+                <!-- <div class="checkbox-wrapper-65">
+                    <label for="cbk1-65">
+                    <input type="checkbox" id="cbk1-65">
+                    <span class="cbx">
+                        <svg width="12px" height="7px" viewBox="0 0 20 11">
+                        <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+                        </svg>
+                    </span>
+                    <span>Remember me</span>
+                    </label>
+                </div> -->
+                <div class="para">
+                    <p>Not having an account? Start creating an account to explore all the features.</p>
+                </div>
+                
+            </div>
+            <div class="container">
+                <button type="submit" class="submit" value= "Sign in" style="margin-top: 10px;margin-right: 15px;">Sign in</button>
+                <a href="{% url 'signup' %}"><button type="button" class="create" style="margin-top: 10px;margin-left: 15px;">Create account</button></a> 
+            </div>
+        </form> 
+    
+    
+</body>
+</html>
+

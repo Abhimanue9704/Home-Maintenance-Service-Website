@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>signup</title>
+        <link rel="stylesheet" href="static/style/signupUser.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="section">
+        <div  class="info">
+            <div class="info-sub">
+                <img class="images" src="static/images/verified(1).svg">
+                <div class="texts">We provide you with verified contracts and agencies.</div>
+                <br><br>
+                <img class="images" src="static/images/hourglass(1).svg">
+                <div class="texts">Shedule the day and save your time.</div>
+                <br><br>
+                <img class="images" src="static/images/pricetags(2).svg">
+                <div class="texts">We prioritize transparency by openly disclosing all prices and costs.</div>
+                <br><br>
+                <img class="images" src="static/images/customercare(1).svg">
+                <div class="texts">24x7 customer care services for any queries.</div>
+                <br><br><br>
+                <img id="img-trouble" src="static/images/alert-outline.svg">
+                <div id="trouble">Trouble creating account <a class="links" href="www.helpme.com">click here</a> for help.</div>
+            </div>
+            <div class="line"></div>
+        </div>
+        
+            <form class="SignUpUser form" action="{% url 'signupUser' %}" method="POST">
+                {% csrf_token %}
+                <div class="head-container">
+                    <div class="head">
+                        <h2 id="head1" style="font-weight: bolder;">New Here,</h2>
+                    </div>
+                    <div class="subhead">
+                        <p id="head2">Start creating your User account.</p>
+                        <p style="color: #5a5d63; font-size: smaller;">(*all the fields are required)</p>
+                    </div>
+                </div>
+                <div class="mega">
+                    <div class="name">
+                        <div class="input-container" id="child-name1">
+                            <input type="text" placeholder="User name" id="inputs" name="username" required>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" placeholder="user email" id="inputs"  name="user_email" required>
+                    </div>
+                    <div class="input-container">
+                    <input type="password" placeholder="password" id="inputs" name="user_pass" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="confirm password" id="inputs" name="confirm_password" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" placeholder="phone no:" id="inputs" name="user_phNo" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="address" placeholder="address" id="inputs" name="user_adr" required>
+                    </div>
+                    <!-- <div class="checkbox-wrapper-65">
+                        <label for="cbk1-65">
+                        <input type="checkbox" id="cbk1-65">
+                        <span class="cbx">
+                            <svg width="12px" height="7px" viewBox="0 0 20 11">
+                            <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+                            </svg>
+                        </span>
+                        <span>I accept <a class="links" href="T&C/terms_of_use.html">Terms Of Use</a> & <a class="links" href="T&C/privacy_policy.html">Privacy Policy</a></span>
+                        </label>
+                    </div> -->
+                    <div class="para">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="btn-grp">
+                    <button type="submit" value="Submit" class="submit" style="margin-right: 0px;">Submit</button> 
+                    <button type="button" class="clear" id="clear" style="margin-left: 0px;" onclick="clearFields()">Clear all</button>
+                </div>
+            </form>
+        
+    </div>
+     
+    <script>
+        function clearFields() {
+    // Get references to all input fields
+    var inputFields = document.querySelectorAll('.input-container input');
+    
+    // Loop through each input field and clear its value
+    inputFields.forEach(function(input) {
+        input.value = '';
+    });
+}
+
+    </script>
+</body>
+</html>

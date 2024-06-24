@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'style/requests.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="navbar">
+    <nav>
+        <ul class="nav-ul">
+            <img id="logo" src="{% static 'images/home_service_icon1.svg' %}">
+            <li id="name">homcare.</li>
+            {% if user.is_authenticated %}
+            <li class="nav-li"><p><a href="{% url 'logout' %}">logout</a></p></li>
+            <!-- <li class="nav-li"><p><a href="">Bookings</a></p></li> -->
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+  <main>
+    <h1>Requests</h1>
+    <div class="box">
+      {% for request in requests %}
+        <div class="inner-box">
+            <p id="user">{{ request.username }}</p>
+            <p id="email">{{ request.email }}</p>
+            <p id="phone">{{ request.phoneNo }}</p>
+            <p id="address">{{ request.address }}</p>
+            <p id="price">Price paid: {{ request.price }}</p>
+            <p id="date">{{ request.startDate }}</p>
+            <form action="{% url 'status' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="providerID" value='{{ request.ID.clientID }}'> 
+              <input type="hidden" name="username" value='{{ request.username }}'> 
+              <input type="hidden" id="startDate" value='{{ request.startDate }}'>
+              <!-- Added an input field to store the formatted date -->
+              <input type="hidden" name="currentDate"> 
+              <button id="accept" type="submit">Completed</button>
+            </form>
+        </div>
+      {% endfor %}
+    </div>  
+  </main>
+  <script>
+    // Get the value of startDate from the hidden input field
+    var startDate = document.getElementById('startDate').value;
+    // Create a Date object from the retrieved date string
+    var cDate = new Date(startDate);
+    // Format the date as yyyy-mm-dd
+    var formattedCurrentDate = cDate.getFullYear() + '-' + ('0' + (cDate.getMonth() + 1)).slice(-2) + '-' + ('0' + cDate.getDate()).slice(-2);
+    // Store the formatted date in the hidden input field
+    document.querySelector('input[name="currentDate"]').value = formattedCurrentDate;
+  </script>
+</body>
+</html>

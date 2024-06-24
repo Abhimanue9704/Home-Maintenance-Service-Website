@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Details</title>
+</head>
+<body>
+  <style>
+    body{
+      font-family: "Poppins",sans-serif;
+      margin: 0px;
+      background-color: #e0e0e0;
+  }
+  main{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 100px;
+      background-color: rgba(0, 255, 255, 0);
+  }
+  
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 5px solid #ccc;
+      border-radius: 5px;
+      display: flex; /* Use flexbox */
+      align-items: center; /* Center vertically */
+    }
+    .left-section {
+      flex: 1; /* Take up remaining space */
+      text-align: left; /* Align text to the left */
+      margin-right: 20px; /* Add some space between left and right sections */
+    }
+    .company-title {
+      font-size:25px;
+      margin-bottom: 10px;
+      max-width: 400px; /* Limit the width */
+      white-space: nowrap; /* Prevent wrapping */
+      overflow: hidden; /* Hide overflow text */
+      text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    }
+    .description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .rate {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #000000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #939393;
+    }
+    .right-section {
+      flex: 1; /* Take up remaining space */
+      text-align: center; /* Align content to the center */
+    }
+    .image {
+      max-width: 100%;
+      height: auto;
+    }
+    header{
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      background-color: #ffffff;
+      top: 0;
+      transition: top 0.5s;
+  }
+  
+  .nav-ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+  #logo{
+      height: 40px;
+      width: 40px;
+      margin: 10px 0px 0px 10px;
+      float: left;
+  }
+  .nav-li{
+      float: right;
+      padding: 0px;
+  }
+  #name{
+      float: left;
+      margin: 13px 0 0 10px;
+      font-weight: 600;
+      font-size: x-large;
+  }
+  .nav-li a{
+      display: block;
+      line-height: 0px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      background: linear-gradient(currentColor, currentColor) 15px 22px / 0em 0.1em no-repeat;
+    transition: 0.5s;
+      /* background: linear-gradient(black, black);
+      background-position:0% 100% ;
+      background-size: 0em 0.1em;
+      background-repeat: no-repeat;
+    transition:
+          background-size 0.3s,
+          background-position 0s 0.3s; */
+  }
+  .nav-li a:hover{
+      background-size: 100% .1em;
+      /* background-position: 0% 100%;
+      background-size: 100% 0.1em; */
+  }
+  
+  .right-section {
+       /* Take up remaining space */
+      text-align: center; /* Align content to the center */
+  }
+
+  </style>
+  <header id="navbar">
+    <nav>
+        <ul class="nav-ul">
+            <img id="logo" src="{% static 'images/home_service_icon1.svg' %}">
+            <li id="name">homcare.</li>
+            <li class="nav-li">
+                <p><a href="#" id="bookingsLink">Bookings</a></p>
+                <form id="bookingForm" action="{% url 'serviceList' %}" method="get" style="display: none;">
+                    {% csrf_token %}
+                    <input type="hidden" name="book" value="booked">
+                </form>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-li"><p><a href="{% url 'logout' %}">logout</a></p></li>
+            <!-- <li class="nav-li"><p><a href="">Bookings</a></p></li> -->
+            {% endif %}
+         
+        </ul>
+    </nav>
+</header>
+  
+<h1>List of Services</h1>
+
+
+<div class="container detail">
+    <div class="left-section">
+      <div class="company-title">{{ details.title }}</div>
+      <div class="description">{{ details.description }}</div>
+      <div class="rate">Rate: {{ details.rate }}</div>
+      <form method="GET" action="{% url 'book' details.sectionID.clientID|stringformat:'s' %}">
+        <button type="submit" class="button">Book Now</button>
+      </form>
+    </div>
+    <div class="right-section">
+        {% for image_obj in image_objs %}
+            {% if image_obj.ID == details.sectionID %}
+                <img src="{{ image_obj.field_name.url }}" alt="User Image" class="image">
+            {% endif %}
+         {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+<!-- 
+<body>
+<h1>List of Services</h1>
+
+<div class="detail">
+    <h2>{{ details.title }}</h2>
+    <h2>{{ details.description }}</h2>
+    <p>Rate: {{ details.rate }}</p>
+    {% for image_obj in image_objs %}
+        {% if image_obj.ID == details.sectionID %}
+            <img src="{{ image_obj.field_name.url }}" alt="User Image" class="image">
+        {% endif %}
+    {% endfor %}
+    <form method="GET" action="{% url 'book' details.sectionID.clientID|stringformat:'s' %}">
+        <button type="submit">Book Service</button> 
+    </form>
+</div> -->
+
+

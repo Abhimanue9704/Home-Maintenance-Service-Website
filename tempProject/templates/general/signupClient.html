@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="static/style/signupClient.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="section">
+        <div  class="info">
+            <div class="info-sub">
+                <img class="images" src="static/images/cash-outline.svg">
+                <div class="texts">Increase your earnings and gain profits.</div>
+                <br><br>
+                <img class="images" src="static/images/trending-up-outline.svg">
+                <div class="texts">Increase your productivity, with more requests.</div>
+                <br><br>
+                <img class="images" src="static/images/people-outline.svg">
+                <div class="texts">We provide you with Huge customer base platform.</div>
+                <br><br>
+                <img class="images" src="static/images/eye-outline.svg">
+                <div class="texts">Greater exposure to more people around you and publicity.</div>
+                <br><br>
+                <img class="images" src="static/images/chatbubbles-outline.svg">
+                <div class="texts">Built in interactive communcations with customers.</div>
+                <br><br><br>
+                
+            </div>
+            <div class="line"></div>
+        </div>
+   
+        <form class="form SignUpClient" action="{% url 'signupClient' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{new_form.as_p}}
+            <div class="head-container">
+                <div class="head">
+                    <h2 id="head1" style="font-weight: bolder;">New Here,</h2>
+                </div>
+                <div class="subhead">
+                    <p id="head2">Start creating your Client account.</p>
+                    <p style="color: #5a5d63; font-size: smaller;">(*all the fields are required)</p>
+                </div>
+            </div>
+            <div class="mega">
+                <div class="name">
+                    <div class="input-container" id="child-name1">
+                        <input type="text" placeholder="User name" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="email" placeholder="company email" id="email" name="user_email" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="password" id="password" name="user_pass" required>
+                 </div>
+                 <div class="input-container">
+                     <input type="password" placeholder="confirm password" id="confirm_password" name="confirm_password" required>
+                 </div>
+                 <div class="input-container">
+                    <input type="text" placeholder="phone no:" id="company_phNo" name="user_phNo" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="company / agency name" id="user_cmpName" name="user_cmpName" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Owner  name" id="owner_name" name="user_ownName" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="address" placeholder="office address" id="office_address" name="user_offAdr" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="GST number" id="gst_no" name="user_gst" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="PAN card number" id="panNo" name="user_pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="Enter a valid PAN card number" required>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="PAN card name" id="panName" name="pan_name"  required>
+                </div>
+                <div class="input-container">
+                    <input type="date" placeholder="Date of Incorporation" id="panDate" name="pan_date"  required>
+                </div>
+                
+                <!-- <div class="custom-file-upload">
+                    <input type="file" id="fileInput" onchange="handleFiles(this.files)" hidden>
+                    <button>
+                        <label for="fileInput">Choose file</label>
+                    </button>
+                    <span id="fileName">no files chosen</span>
+                </div> -->
+                <!-- <div class="checkbox-wrapper-65">
+                    <label for="cbk1-65">
+                      <input type="checkbox" id="cbk1-65">
+                      <span class="cbx">
+                        <svg width="12px" height="7px" viewBox="0 0 20 11">
+                          <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>I accept <a class="links" href="T&C/terms_of_use.html">Terms Of Use</a> & <a class="links" href="T&C/privacy_policy.html">Privacy Policy</a></span>
+                    </label>
+                </div> -->
+                <div class="para">
+                    <p></p>
+                </div>
+            </div>
+            <div class="btn-grp">
+                <button type="submit" value="Submit" class="submit" style="margin-right: 0px;">Submit</button> 
+                <button type="button" class="create" style="margin-left: 0px;" onclick="clearFields()">Clear all</button>
+            </div>
+        </form>
+    </div>
+    <script >
+         function clearFields() {
+    // Get references to all input fields
+    var inputFields = document.querySelectorAll('.input-container input');
+    
+    // Loop through each input field and clear its value
+    inputFields.forEach(function(input) {
+        input.value = '';
+    });
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+body{
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    background-image: url("../images/login_backside.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+body{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    /* Add your background pattern here */
+    /* background-color: lightblue; */
+    background-image: radial-gradient(black 55%, #0000),
+      /* radial-gradient(black 55%, #0000), */
+        linear-gradient(
+          135deg,
+          lime,
+          cyan,
+          blue,
+          indigo,
+          deeppink
+        );
+    background-size: 100% 0.4%, contain;
+    /* background-blend-mode: hard-light; */
+    /* background-position: 0 0, 1em 1em, 0 0; */
+  }
+
+.section{
+    overflow: hidden;
+    margin: 100px auto;
+    display: flex;
+    width: 1000px;
+    min-height: 1000px;
+    background-color: #ffffffbe;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px 3px rgba(1, 0, 0, 0.12);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    transition-duration: 0.5s;
+}
+.info{
+    width: 462px;
+    height: 700px;
+    float: left;
+    background-color: #00000000;
+}
+.info-sub{
+    float: left;
+    width: 460px;
+    max-height: 700px;
+    padding: 130px 30px 90px 90px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #00000000;
+}
+.images{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 25px;
+    float: left;
+}
+.texts{
+    margin-left: 55px;
+    text-align: left;
+}
+#img-trouble{
+    width: 15px;
+    height: 15px;
+    margin-top: 10px;
+    margin-right: 0px;
+    float: left;
+}
+#trouble{
+    margin-top: 8px;
+    color: #5a5d63;
+    font-size: small;
+}
+.line{
+    margin-top: 60px;
+    height: 570px;
+    width: 2px;
+    border-radius: 20px;
+    background-color:#742aff;
+    background-image:  linear-gradient(#5900ff,#c3a2ff);
+    float:right;
+}
+.head-container{
+    padding-left: 8px;
+}
+.form {
+    /*margin-left: 420px;*/
+    float: right;
+    padding: 3rem;
+    max-width: 550px;
+    max-height: 700px;
+}
+/*.form:hover{
+    transition: 0.3s;
+    transform:scale(1.019);
+}*/
+.head {
+    font-size: 1.25rem;
+    line-height: 1rem;
+    text-align: left;
+    color: #000000;
+    /*padding-left: 65px;*/
+    display: block;
+}
+.subhead{
+    font-size: 1.1rem;
+    line-height: 0.5rem;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+    /*padding-left: 65px;*/
+    display: block;
+}
+
+.mega{
+    padding-top: 0rem;
+}
+.input-container {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.input-container input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb00;
+    margin: auto;
+}
+
+.input-container input[type="email"]{
+    margin-bottom: 0px;
+}
+
+.input-container input {
+    background-color: #fff;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 400px;
+    border-radius: 0.5rem;
+    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);*/
+    box-shadow: 0px 1px 5px 0.5px rgba(76, 76, 76, 0.106);
+    transition-duration: 0.4s;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff00;
+}
+.name{
+    display: flex;
+}
+#child-name1{
+    width: 400px;
+}
+#username{
+    width: 400px;
+}
+.input-container input::placeholder{
+    opacity: 0.5;
+}
+
+.input-container input:focus{
+    outline: none;
+    border-color: #742aff;
+    transition: 0.3s;
+    transform:scale(1.019);
+}
+
+#file-btn{
+    margin-left: 10px;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 5px;
+}
+.checkbox-wrapper-65{
+    padding-left: 12px;
+    padding-top: 5px;
+    display: flex;
+}
+.checkbox-wrapper-65 *,
+.checkbox-wrapper-65 ::after,
+.checkbox-wrapper-65 ::before {
+    box-sizing: border-box;
+}
+.checkbox-wrapper-65 .cbx {
+    position: relative;
+    display: block;
+    float: left;
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    background-color: #ebebeb;
+    background-image: linear-gradient(#ebebeb, #ebebeb);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.154), inset 0 -1px 1px rgba(224, 224, 224, 0.15);
+    transition: all 0.15s ease;
+    margin-top: 3px;
+    margin-left: 0px;
+}
+.checkbox-wrapper-65 .cbx svg {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 17;
+    stroke-dashoffset: 17;
+    transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-65 .cbx + span {
+    float: left;
+    margin-left: 6px;
+}
+.checkbox-wrapper-65 {
+    user-select: none;
+}
+.checkbox-wrapper-65 label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: smaller;
+    color: #5a5d63;
+}
+.checkbox-wrapper-65 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx {
+    background-color: #742aff;
+    background-image: linear-gradient(#742aff, #742aff);
+}
+.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx svg {
+    stroke-dashoffset: 0;
+    transition: all 0.15s ease;
+}
+.links{
+    color: #5a5d63;
+    text-decoration: none;
+}
+.links:hover{
+    color: #742aff;
+    text-decoration: underline;
+}
+.para{
+    display: flex;
+    justify-content:left;
+    padding-top:8px ;
+    padding-bottom: 0px;
+  }
+.btn-group{
+    display: flex;
+}
+.submit {
+    display: block;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #742aff;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    float: right;
+    box-shadow: 0 5px 15px 3px rgba(146, 146, 146, 0.065);
+    border-radius: 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+.submit:hover{
+    background-color: #ffffff00;
+    border: solid #742aff;
+    color: #742aff;
+}
+
+.submit:active{
+    transition: 0.3s;
+    transform:scale(0.9);
+}
+.create{
+    display: block;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #ffffff;
+    color: #742aff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    float: left;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #ffffff00;
+}
+.create:hover{
+    background-color: #752aff2b;
+    color: #5d12ea;
+}
+.create:active{
+    transition: 0.3s;
+    transform:scale(0.9);
+}
